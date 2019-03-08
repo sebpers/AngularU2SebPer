@@ -1,0 +1,10 @@
+<div *ngIf="!loggedUser">
+  <h4>Please login</h4>
+  <input [(ngModel)]="userName" type="text" placeholder="username..">
+  <button (click)="login()" routerLink="/dashbord" [disabled]="!userName">Login</button>
+</div>
+
+<div *ngIf="loggedUser">
+  <h4>You are already logged in</h4>
+  <button (click)="logout()" routerLink="/">Logout</button>
+</div>
